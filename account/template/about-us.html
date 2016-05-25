@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>有+</title>
+    <style>
+        .ab-list{
+            width: 800px;
+            margin: 0 auto
+        }
+        .ab-list li p{
+            font-size: 16px;
+            color:#333;
+            padding:30px 10px 20px 10px;
+        }
+        .ab-list li img{
+            width: 800px;
+            margin: 0 auto;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    {% extends "header.html" %}
+    <div class="container">
+        {% block content %}
+            <div class="content">
+                <ul class="ab-list">
+                    {% for ab in abouts %}
+                    <li><p>{{ ab.abTitle }}</p></li>
+                    <li><img src="/static/images/aboutus/{{ ab.abImgUrl }}" alt=""></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endblock %}
+    </div>
+
+</body>
+</html>

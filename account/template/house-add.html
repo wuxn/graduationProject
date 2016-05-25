@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/images/icon.jpg" type="image/png" sizes="16x16">
+    <title>有+</title>
+    <style>
+        .add-container{
+            width:100%;
+            min-height:100%;
+            position:relative;
+            z-index:1;
+        }
+        .add-bg{
+            width: 100%;
+            height: 100%;
+        }
+        .add-content{
+            position:absolute;
+            top:70px;
+            background-color: rgba(0,0,0,0.5);
+            z-index:10;
+        }
+        .house-add{
+           width:800px;
+           margin:0 auto;
+           border:1px solid #e7e7e7;
+           color:#fff;
+           position:relative;
+           top:70px;
+        }
+
+        .house-add tr{
+            margin-left:10px;
+        }
+        .house-add tr td{
+            padding:15px 0;
+        }
+        .house-add tr td:nth-child(odd){
+            font-size:14px;
+            padding-left:15px;
+        }
+        .house-add tr td:nth-child(even){
+            padding-right:15px;
+        }
+        .house-add tr td input{
+            width:150px;
+            height:30px;
+            border-radius:3px;
+        }
+        .house-add tr td textarea{
+            border-radius:3px;
+            text-align:left;
+        }
+        .add-content .add-btn{
+            width:100px;
+            padding:6px 12px;
+            margin-left: 100px;
+            border-radius:3px;
+            background-color:#fff;
+            border:none;
+            color:#e78170;
+            font-size:14px;
+            float:right;
+        }
+        .house-add .add-mo{
+            border-bottom:1px solid #fff;
+            border-radius:3px;
+        }
+    </style>
+    <script>
+    </script>
+</head>
+<body>
+    {% extends "header-admin.html" %}
+    <div class="container add-container">
+        {% block content %}
+        <img src="/static/images/main08.png" alt="" class="add-bg">
+        <div class="content add-content">
+            <form method = 'post' enctype="multipart/form-data">
+                <table class="house-add">
+                    <tr class="add-mo">
+                        <td><h4>添加/修改房源</h4></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="house-id">编号:</label>
+                        </td>
+                        <td>
+                            {% if mid != mdata.houseId%}
+                            <input type="text" name="houseid" id="house-id" autocomplete="off">
+                            {% endif %}
+                            {% if mid == mdata.houseId%}
+                            <input type="text" name="houseid" id="house-id" autocomplete="off" value="{{ mdata.houseId }}">
+                            {% endif %}
+                        </td>
+                        <td>
+                            <label for="house-title">房屋标题:</label>
+                        </td>
+                        <td>
+                            {% if mid != mdata.houseId%}
+                            <textarea name="housede" id="house-title" cols="30" rows="10" autocomplete="off"></textarea>
+                            {% endif %}
+                            {% if mid == mdata.houseId%}
+                            <textarea name="housede" id="house-title" cols="30" rows="10" autocomplete="off">{{ mdata.houseTitle}}</textarea>
+                            {% endif %}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="house-de">房屋描述:</label>
+                        </td>
+                        <td>
+                            {% if mid != mdata.houseId%}
+                            <textarea name="housede" id="house-de" cols="30" rows="10" autocomplete="off"></textarea>
+                            {% endif %}
+                            {% if mid == mdata.houseId%}
+                            <textarea name="housede" id="house-de" cols="30" rows="10" autocomplete="off">{{ mdata.houseDescribe}}</textarea>
+                            {% endif %}
+
+                        </td>
+                        <td>
+                            <label for="house-pri">价格:</label>
+                        </td>
+                        <td>
+                            {% if mid != mdata.houseId%}
+                            <input type="text" name="housepri" id="house-pri" autocomplete="off">
+                            {% endif %}
+                            {% if mid == mdata.houseId%}
+                            <input type="text" name="housepri" id="house-pri" autocomplete="off" value="{{ mdata.housePrice }}">
+                            {% endif %}
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="house-area">面积:</label>
+                        </td>
+                        <td>
+                            {% if mid != mdata.houseId%}
+                            <input type="text" name="housearea" id="house-area" autocomplete="off">
+                            {% endif %}
+                            {% if mid == mdata.houseId%}
+                            <input type="text" name="housearea" id="house-area" autocomplete="off" value="{{ mdata.houseArea }}">
+                            {% endif %}
+
+                        </td>
+                        <td>
+                            <label for="house-style">格局:</label>
+                        </td>
+                        <td>
+                            {% if mid != mdata.houseId%}
+                            <input type="text" name="housestyle" id="house-style" autocomplete="off">
+                            {% endif %}
+                            {% if mid == mdata.houseId%}
+                            <input type="text" name="housestyle" id="house-style" autocomplete="off" value="{{ mdata.houseStyle }}">
+                            {% endif %}
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="house-add">房屋地址:</label>
+                        </td>
+                        <td>
+                            {% if mid != mdata.houseId%}
+                            <input type="text" name="housestyle" id="house-style" autocomplete="off">
+                            {% endif %}
+                            {% if mid == mdata.houseId%}
+                            <input type="text" name="housestyle" id="house-style" autocomplete="off" value="{{ mdata.houseStyle }}">
+                            {% endif %}
+                        </td>
+                        <td>
+                            <label for="house-year">建设年份:</label>
+                        </td>
+                        <td>
+                            {% if mid != mdata.houseId%}
+                            <input type="text" name="houseyear" id="house-year" autocomplete="off">
+                            {% endif %}
+                            {% if mid == mdata.houseId%}
+                            <input type="text" name="houseyear" id="house-year" autocomplete="off" value="{{ mdata.houseYear }}">
+                            {% endif %}
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="house-rid">负责人编号:</label>
+                        </td>
+                        <td>
+                            {% if mid != mdata.houseId%}
+                            <input type="text" name="houserid" id="house-rid" autocomplete="off">
+                            {% endif %}
+                            {% if mid == mdata.houseId%}
+                            <input type="text" name="houserid" id="house-rid" autocomplete="off" value="{{ mdata.houseResponsibleId }}">
+                            {% endif %}
+
+                        </td>
+                        <td>
+                            <label for="house-rname">负责人姓名:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="housername" id="house-rname" autocomplete="off">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="house-id">上传图片:</label>
+                        </td>
+                        <td>
+                            {{ imgf.as_p }}
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="add-btn">提交</button>
+                        </td>
+                        <td></td>
+                        <td>
+                            <input class="add-btn" type="button" name="reset" value="重置">
+                        </td>
+                        <td></td>
+                    </tr>
+
+                </table>
+            </form>
+
+        </div>
+        {% endblock %}
+    </div>
+
+</body>
+</html>

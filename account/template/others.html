@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for s in sqms %}
+    {{ s.sqmId }}
+    {% endfor %}
+    <p>
+        {% if sqms.has_previous %}
+        <a href="/others/?page={{ sqms.previous_page_number }}">上一页</a>
+        {% endif %}
+        {# sqms.paginator.number_pages 返回总页数 #}
+          Page {{ sqms.number }} of {{ sqms.paginator.num_pages }}.
+        {% if sqms.has_next %}
+          <a href="/others/?page={{ sqms.next_page_number }}">下一页</a>
+        {% endif %}
+    </p>
+
+</body>
+</html>

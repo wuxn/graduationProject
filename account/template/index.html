@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" href="/static/images/icon.jpg" type="image/png" sizes="16x16">
+    <title>有+</title>
+    <style>
+        .index-table{
+            border-bottom:1px solid #e7e7e7;
+        }
+        .index-table tr td{
+            width:100px;
+            padding:20px;
+            line-height:20px;
+            text-align:center;
+            text-justify:inter-ideograph;
+	        text-align: justify;
+            border:1px solid #e7e7e7;
+            border-bottom: none;
+
+        }
+        
+        .index-table tr td p{
+        }
+        .index-table tr td img{
+            width:80px;
+            height:60px;
+            margin:0;
+            padding:0;
+            vertical-align:middle;
+        }
+        .index-table tr .table-img{
+            width:50px;
+        }
+        .index-table .title{
+            width:150px;
+
+        }
+        .index-table .describe{
+            width: 200px;
+        }
+        .table-th tr td{
+            width:100px;
+        }
+        .table-th .images{
+            width: 110px;
+        }
+        .table-th .title{
+            width: 150px;
+        }
+        .table-th .describe{
+            width: 205px;
+        }
+        .table-tb tr:nth-child(odd){
+            background:#EDF3FE;
+        }
+        .index-house-list{
+            margin-top:30px;
+        }
+        .index-house-list h4{
+            color:#333;
+            padding:0 15px 15px 15px;
+        }
+
+
+    </style>
+    <script>
+    </script>
+</head>
+<body>
+{% extends "header-admin.html" %}
+<div class="container" id="container">
+    {% block content %}
+    <div class="content">
+        <div class="houseinfo">
+            <div class="sale-left">
+                <ul class="house-list index-house-list" id="house-list">
+                    <h4>房源信息</h4>
+                    {% if currentUrl == adata.areaId %}
+                    {% for t in temp %}
+                     <a href="/housedetail/{{t.houseId}}">
+                         <li class>
+                                <img src="{{STATIC_URL}}images/{{t.imgUrl}}">
+                                <div class="house-detail">
+                                    <div class="house-title">
+                                        <p>{{ t.houseTitle }}</p>
+                                    </div>
+                                    <div class="house-info">
+                                        <p>{{ t.houseTitle }}</p>
+                                    </div>
+                                </div>
+                                <div class="price">
+                                    <p>售价:<span>{{ t.housePrice }}万</span></p>
+                                    <a href="#">编辑</a>
+                                    <a href="#">删除</a>
+                                </div>
+                         </li>
+                     </a>
+                    {% endfor %}
+                    {% endif %}
+
+                    {% if currentUrl == undefined %}
+
+                    <table class="index-table table-th">
+                        <tr>
+                            <td>编号</td>
+                            <td class="images">图片预览</td>
+                            <td class="title">标题</td>
+                            <td class="describe">描述</td>
+                            <td>价格</td>
+                            <td>面积</td>
+                            <td>格局</td>
+                            <td>地址</td>
+                            <td>建设年份</td>
+                            <td>负责人编号</td>
+                            <td>负责人姓名</td>
+                            <td>操作</td>
+                        </tr>
+                    </table>
+
+                    <table class="index-table table-tb">
+                        <form action="" enctype="multipart/form-data" method="POST">
+                        {% for hd in data %}
+                        <tr>
+                            <td>
+                                <p>{{ hd.houseId }}</p>
+                            </td>
+                            <td class="table-img">
+                                <img src="{{STATIC_URL}}images/{{ hd.imgUrl }}">
+                            </td>
+                            <td class="title">
+                                <p>{{ hd.houseTitle }}</p>
+                            </td>
+                            <td class="describe">
+                                <p>{{ hd.houseDescribe }}</p>
+                            </td>
+                            <td>
+                                <p>{{ hd.housePrice }}</p>
+                            </td>
+                            <td>
+                                <p>{{ hd.houseArea }}</p>
+                            </td>
+                            <td>
+                                <p>{{ hd.houseStyle }}</p>
+                            </td>
+                            <td>
+                                <p>{{ hd.houseAddress }}</p>
+                            </td>
+                            <td>
+                                <p>{{ hd.houseYear }}</p>
+                            </td>
+                            <td>
+                                <p>{{ hd.houseResponsibleId }}</p>
+                            </td>
+                            <td>
+                                <a href="/modify/?page={{data.number}}&&id={{hd.houseId}}" class="modify">编辑</a>
+                                <a href="/index/?page={{data.number}}&&did={{hd.houseId}}" class="delete" deleteid="{{hd.houseId}}">删除</a>
+                            </td>
+                            <!--<td></td>-->
+                        </tr>
+                        {% endfor %}
+                        </form>
+                    </table>
+
+                     <!--<a href="/housedetail/{{hd.houseId}}">-->
+                         <!--<li class>-->
+                                <!--<img src="{{STATIC_URL}}images/{{ hd.imgUrl }}">-->
+                                <!--<div 好 class="house-detail">-->
+                                    <!--<div class="house-title">-->
+                                        <!--<p>{{ hd.houseTitle }}</p>-->
+                                    <!--</div>-->
+                                    <!--<div class="house-info">-->
+                                        <!--<p>{{ hd.houseTitle }}</p>-->
+                                    <!--</div>-->
+
+                                <!--</div>-->
+                                <!--<div class="price">-->
+                                    <!--<p>售价:<span>{{ hd.housePrice }}万</span></p>-->
+                                    <!--&lt;!&ndash;<a href="#">删除</a>&ndash;&gt;-->
+                                <!--</div>-->
+                         <!--</li>-->
+                     <!--</a>-->
+                     <div class="multi-page">
+                         {% if data.has_previous %}
+                         <a href="/index/?page={{ data.previous_page_number }}" class="aPre">上一页</a>
+                         {% endif %}
+                         {# data.paginator.page_range 这个函数返回包含一个所有页码数的 range 对象 #}
+                         {# 即 range(1, data.paginator.num_pages + 1) #}
+                         {% for page_number in data.paginator.page_range %}
+                            {% ifequal page_number  data.number %}
+                                {{ page_number }}
+                            {% else %}
+                                <a href="/index/?page={{ page_number }}">{{ page_number }}</a>
+                            {% endifequal %}
+                         {% endfor %}
+                         {# data.paginator.number_pages 返回总页数 #}
+
+                         {% if data.has_next %}
+                         <a href="/index/?page={{ data.next_page_number }}" class="aNxt">下一页</a>
+                         {% endif %}
+                         <p>Page {{ data.number }} of {{ data.paginator.num_pages }}.</p>
+                     </div>
+                     {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/gp.css">
+    <link rel="icon" href="/static/images/icon.jpg" type="image/png" sizes="16x16">
+    <script type="text/javascript" src="/static/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/gp.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <!--<link rel="shortcut icon" href="/static/images/main01.jpg">-->
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        .menu li img{
+            vertical-align:middle;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".search").attr({"id":"search"});
+        })
+    </script>
+</head>
+<body>
+        <header>
+            <nav>
+                <form action="" method="GET">
+                    <ul class="menu">
+                        <li>
+                            <a href="/index/?page=1"><h3>有+</h3></a>
+                        </li>
+                        <li><a href="/index/?page=1">基础房源数据</a></li>
+                        <li><a href="/add">添加房源</a></li>
+                        <li><a href="/add">人员信息</a></li>
+                        <li><a href="/others">其他功能</a></li>
+                    </ul>
+                    <ul class="login-nav">
+                        <li>{{adminUn}}</li>
+                    </ul>
+                    <ul class="search">
+                        <li><input type="text" placeholder="请输入小区地址" class="search-txt" name="search"></li>
+                        <li><input type="submit" value="搜索" class="search-btn"></li>
+                    </ul>
+                </form>
+
+            </nav>
+        </header>
+    {% block content %}{% endblock%}
+</body>
+</html>

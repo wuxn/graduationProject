@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>自如客小艾,不死磕的双鱼座摄影师|自如客</title>
+<meta name="keywords" content="自如客小艾,不死磕的双鱼座摄影师,自如客"/>
+<meta name="description" content="自如客小艾,不死磕的双鱼座摄影师,自如客"/>
+<link href="http://www.ziroom.com/static/201401/css/z-common.css" rel="stylesheet" type="text/css"/>
+<link href="http://www.ziroom.com/static/ziroomer/css/poster.css?6" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="http://www.ziroom.com/static/201401/js/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.ziroom.com/static/201401/js/z-common.js"></script>
+<script type="text/javascript" src="http://www.ziroom.com/static/201401/js/z-ui.js"></script>
+<script>
+$(function(){
+var index = 0;
+var aList = $(".dot a");
+var len = aList.length;
+var adTimer = null;
+$(".txt_btn a").click(function(){
+var oParent=$(this).parents('.txt');
+var oTxtCon=oParent.next('.txt_con');
+var oDemo=oTxtCon.find('.txt_scroll');
+var oScrollBar=oDemo.find('.scroll-bar');
+var oClose=oTxtCon.find('.close');
+oScrollBar.hide();
+oClose.hide();
+oDemo.css({"left":"-596px"}).stop().animate({"left":"0px"},300,function(){oScrollBar.show();oClose.show();});
+});
+$('.close').click(function()
+{
+var oParent=$(this).parents('.txt_con');
+var oParBottom=oParent.prev('.txt_bottom');
+var oDemo=oParent.find('.txt_scroll');
+var oScrollBar=oDemo.find('.scroll-bar');
+var oTxtBtn=oParBottom.find('.txt_btn');
+oScrollBar.hide();
+$(this).hide();
+oDemo.stop().animate({"left":"-596px"},300);
+});
+});
+
+function showImg(index)
+{
+var aLi = $(".story_info ul li");
+var $roll = $('.dot a');
+aLi.eq(index).stop().animate({"opacity":"1"},500).siblings().stop().animate({"opacity":"0"},500);
+$roll.removeClass('active').eq(index).addClass('active');
+};
+</script>
+<script src="http://www.ziroom.com/static/ziroomer/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<link href="http://www.ziroom.com/static/ziroomer/css/jquery.mCustomScrollbar.css" rel="stylesheet" />
+<!--[if IE 7]>
+<style type="text/css">
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+position:relative; left:-6px;
+}
+.mCSB_scrollTools .mCSB_buttonUp,
+.mCSB_scrollTools .mCSB_buttonDown{display:none;}
+</style>
+<![endif]-->
+<script type="text/javascript">
+    $(window).load(function () {
+var totalScrollOffsetH=$(".txt_artical").height();
+if(IsPC()){
+$("#demo").mCustomScrollbar({
+scrollButtons:{
+enable:true
+}
+});
+}else{
+$('.txt').css({'z-index':'9','padding-top':'38px'});
+$('.txt_con,.txt_scroll').css({'z-index':'8'})
+$('.txt_top').css({'position':'fixed','left':'0','top':'0','width':'100%','z-index':999});
+
+$('.txt_scroll,#demo,.story_info ul,.mainContent').css({'height':totalScrollOffsetH+100});
+
+}
+
+    });
+    	function IsPC()  
+{  
+   var userAgentInfo = navigator.userAgent;  
+   var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");  
+   var flag = true;  
+   for (var v = 0; v < Agents.length; v++) {  
+   if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }  
+   }  
+   return flag;  
+}
+</script>
+<script>
+$(function(){
+  $(".review_btn").click(function(e){
+    $(".review_box").toggle();
+e.stopPropagation();
+  })
+  $(document).click(function(){
+    $(".review_box").hide();
+}) 
+})
+</script>
+</head>
+<body>
+<!--header-->
+<div id="sub-header">
+<div class="top">
+    	<div class="area clearfix">
+            <ul class="left_top">                  
+                <li class="bor"><a href="/">首页</a></li>
+                <li class="bor"><a href="/z/nl/" target="_blank">自如找房</a></li>
+                <li class="bor"><a href="/index.php?_p=nlist&_a=product" target="_blank">自如友家</a></li>
+                <li class="bor"><a href="/zhuanti/youjia3/index.html" target="_blank">自如整租</a></li>
+                <li class="bor"><a href="http://www.ziroomapartment.com/" target="_blank">自如寓</a></li>
+                <li class="bor"><a href="/index.php?uri=ziroomer/index" target="_blank">自如生活</a></li>
+                <li class="bor"><a href="/servicecentre/" target="_blank">服务中心</a></li>
+                <li><a href="http://y.ziroom.com/" target="_blank">业主出租</a></li>
+            </ul>
+            <ul class="fr">                  
+                <li class="bor">您好，欢迎来到自如网！</li>	
+                <!--li class="bor"><a href="/g/login.html" rel="nofollow">登录</a></li>
+                <li class="bor"><a href="/g/login.html?action=register" rel="nofollow">注册</a></li-->
+                <li class="menu_list bor">
+                    <a href="http://i.ziroom.com/?uri=ziroomer/index" target="_blank" class="menu" rel="nofollow">我的自如<b></b></a>
+                    <ul>
+                        <li><a href="http://i.ziroom.com/?uri=reserve" rel="nofollow">我的预定</a></li>
+                        <li><a rel="nofollow" href="http://i.ziroom.com/?uri=collect" class="txt_t">我的收藏</a></li>
+                        <li><a class="txt_t" href="http://i.ziroom.com/?uri=integral/integral" rel="nofollow">我的积分</a></li>
+                    </ul>
+                </li>
+                <li class="menu_list">
+                    <a href="/g/login.html" target="_blank" class="menu" rel="nofollow">在线服务<b></b></a>
+                    <ul>
+                        <li><a href="http://i.ziroom.com/?uri=contract/pay" rel="nofollow">在线交费</a></li>
+                        <li><a href="http://i.ziroom.com/?uri=repair/list" rel="nofollow">在线报修</a></li>
+                        <li><a href="http://i.ziroom.com/?uri=ziroomer/complain_list" rel="nofollow">在线投诉</a></li>
+                    </ul>
+                </li>              
+            </ul>     
+</div>
+  </div>
+   <script type="text/javascript">
+
+$('#header .menu_list').hover(function()
+{
+$(this).addClass('menuhover');
+},function()
+{
+$(this).removeClass('menuhover');
+});
+   </script> 
+</div>
+<!--header End-->
+<!--content-->
+<div class="mainContent">
+  <div class="area clearfix w1100">
+    <div id="logo"><a href="/ziroomer/"><img src="http://www.ziroom.com/static/ziroomer/images/story_y_logo.png" width="256" height="54" alt="自如客"  title="自如客" /></a></div>
+    <!--<ul class="story_nav clearfix">
+      <li><a href="/ziroomer/">自如客首页</a></li>
+      <li><a href="/ziroomer/people/">人物志</a></li>
+      <li><a href="/ziroomer/life/">生活记</a></li>
+      <li><a href="/ziroomer/shopping/">自如选</a></li>
+      <li><a href="/ziroomer/activity/">同城游</a></li>
+      <li><a href="/ziroomer/express/">转租快讯</a></li>
+      <li class="no_line"><a href="http://zmall.ziroom.com/ziroomer/score/">自如客积分</a></li>
+    </ul>-->
+    <div class="review">
+      <a href="javascript:;" class="review_btn"></a>
+      <ul class="review_box" style="display:none;">
+                <li><a href="/ziroomer/?_a=detail&id=50000149" target="_blank" class="clearfix"><span class="fl w50">第1期：</span><span class="fl w179">自如客他她，风雨也挡不住的小确幸</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000150" target="_blank" class="clearfix"><span class="fl w50">第2期：</span><span class="fl w179">活力水果，大太阳不用怕，自如把维C送到手</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000147" target="_blank" class="clearfix"><span class="fl w50">第3期：</span><span class="fl w179">每个小肥侠都是潜力股，月度跳操</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000140" target="_blank" class="clearfix"><span class="fl w50">第4期：</span><span class="fl w179">自如客大袁，爱折腾的老朋友</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000113" target="_blank" class="clearfix"><span class="fl w50">第5期：</span><span class="fl w179">自如ZO李斌，没能成为李连杰的员工是我最大的幸运</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000131" target="_blank" class="clearfix"><span class="fl w50">第6期：</span><span class="fl w179">自如客小艾，不死磕的双鱼座摄影师</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000123" target="_blank" class="clearfix"><span class="fl w50">第7期：</span><span class="fl w179">自如客桑叶，选对了，租房结婚也幸福</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000103" target="_blank" class="clearfix"><span class="fl w50">第8期：</span><span class="fl w179">自如客思雯，生活安稳，是为了创作更自由</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000100" target="_blank" class="clearfix"><span class="fl w50">第9期：</span><span class="fl w179">自如冠军队，安达就是爱打球！</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000087" target="_blank" class="clearfix"><span class="fl w50">第10期：</span><span class="fl w179">自如客怀猛，自如客系列球赛策划人</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000068" target="_blank" class="clearfix"><span class="fl w50">第11期：</span><span class="fl w179">Ephap，一个哈萨克男孩的总统梦</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000064" target="_blank" class="clearfix"><span class="fl w50">第12期：</span><span class="fl w179">自如客李赫，喜欢唱歌的人永远都在</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000044" target="_blank" class="clearfix"><span class="fl w50">第13期：</span><span class="fl w179">自如客玲悦，不想看不起五年后的自己</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000043" target="_blank" class="clearfix"><span class="fl w50">第14期：</span><span class="fl w179">自如客正宇，爱橄榄球的宅男小说家</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000042" target="_blank" class="clearfix"><span class="fl w50">第15期：</span><span class="fl w179">自如客牧童，情迷音乐与古典的专业足球门将</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000035" target="_blank" class="clearfix"><span class="fl w50">第16期：</span><span class="fl w179">自如客，-用自律的生活，过自由的人生</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000032" target="_blank" class="clearfix"><span class="fl w50">第17期：</span><span class="fl w179">自如客，-实习律师的日常</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000034" target="_blank" class="clearfix"><span class="fl w50">第18期：</span><span class="fl w179">自如客，-想要的生活，和好朋友一起创造</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000025" target="_blank" class="clearfix"><span class="fl w50">第19期：</span><span class="fl w179">自如客牧童，情迷音乐与古典的专业足球门将</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000021" target="_blank" class="clearfix"><span class="fl w50">第20期：</span><span class="fl w179">自如客李靖，青春就是为梦想，只剩三块钱也不曾退缩</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000020" target="_blank" class="clearfix"><span class="fl w50">第21期：</span><span class="fl w179">Ephap，一个哈萨克男孩的总统梦</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000007" target="_blank" class="clearfix"><span class="fl w50">第22期：</span><span class="fl w179">自如客玲悦，不想看不起五年后的自己</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=50000006" target="_blank" class="clearfix"><span class="fl w50">第23期：</span><span class="fl w179">自如客正宇，爱橄榄球的宅男小说家</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=277" target="_blank" class="clearfix"><span class="fl w50">第24期：</span><span class="fl w179">自如客紫渝，只为一碗重庆味道</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=290" target="_blank" class="clearfix"><span class="fl w50">第25期：</span><span class="fl w179">自如客志鹏，生活的100种可能</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=270" target="_blank" class="clearfix"><span class="fl w50">第26期：</span><span class="fl w179">郑华莹，大巴出行不是乌托邦</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=260" target="_blank" class="clearfix"><span class="fl w50">第27期：</span><span class="fl w179">自如客韶怡，学生物工程的野原美伢</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=244" target="_blank" class="clearfix"><span class="fl w50">第28期：</span><span class="fl w179">欧阳亿丰，“二次元”的北漂演员</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=214" target="_blank" class="clearfix"><span class="fl w50">第29期：</span><span class="fl w179">自如客晓溪，“挺有意思”的姑娘</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=206" target="_blank" class="clearfix"><span class="fl w50">第30期：</span><span class="fl w179">自如客果冻，一朵飘摇的纪录片导演</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=204" target="_blank" class="clearfix"><span class="fl w50">第31期：</span><span class="fl w179">自如客小宇，理科男的柔情你不懂</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=201" target="_blank" class="clearfix"><span class="fl w50">第32期：</span><span class="fl w179">自如客静宜，一个设计师的自如旅程</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=197" target="_blank" class="clearfix"><span class="fl w50">第33期：</span><span class="fl w179">自如客洪蕾，以作为人生的艺术青年</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=180" target="_blank" class="clearfix"><span class="fl w50">第34期：</span><span class="fl w179">自如客袁宝，我是8号学苑袁老师</span></a></li>
+                <li><a href="/ziroomer/?_a=detail&id=178" target="_blank" class="clearfix"><span class="fl w50">第35期：</span><span class="fl w179">季莹莹，从一只皮箱变成一个家</span></a></li>
+              </ul>
+    </div>
+  </div>
+  <div class="story_info">
+<ul class="clearfix">
+      <li>
+        <img src="http://www.ziroom.com/static/upload/cms/2016/04/05800f566704b0ce1faccdb837177162.jpg" width="1197" height="725" />
+        <div class="txt">
+          <div class="txt_top">
+            <h2>自如客小艾</h2>
+            <p>不死磕的双鱼座摄影师</p>
+          </div>
+          <div class="txt_bottom">
+            <div class="s1">小艾，双鱼座，毕业几年间，在北京和烟台之间往返三次，尝试不同的工作，只为确定自己内心最想要什么，现在他在北京做旅行摄影师，同时也拥有安稳的生活后盾。</div>
+            <div class="txt_btn"><a href="javascript:;"></a></div>
+         </div>
+        </div>
+        <div class="txt_con">
+            <a class="close"></a>
+            <div class="txt_scroll">
+            	<div id="demo">    
+                <div class="txt_artical">
+                    <div class="txt_xi"><p><span class="author-110341" style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><span style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"> &nbsp;</span><span id="_baidu_bookmark_start_0" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span></span><span id="_baidu_bookmark_start_2" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"> &nbsp; &nbsp;小艾，双鱼座，山东烟台人，现居北京，是一名旅行摄影师，以自驾游的方式去拍摄旅途中的故事。其实在成为旅行摄影师之前，小艾已经尝试过几个不同的职业，也在不同的城市创过业，虽然前后也不过几年的时间，但对于他而言，正是这段历程，让他现在做旅行摄影师这个选择，更加的坚定。</span><span id="_baidu_bookmark_end_3" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span class="author-110341" style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><span id="_baidu_bookmark_end_1" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span></span></p><p style="text-align:center"><span class="author-110341" style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><img src="/static/js/ueditor1_2_4_0/php/upload/img/20160411/14603703231204.jpg" title="1.jpg" style="float:none;" /><br /></span></p><p><span class="author-110341" style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><span style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"> &nbsp; &nbsp;</span><span id="_baidu_bookmark_start_6" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span></span><span id="_baidu_bookmark_start_8" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"> &nbsp;这已经不是小艾第一次来北京，仔细算起来，他算是来北京工作过三次的人了。临近毕业那年，他就从山东来到了北京，在一个潮牌工作室做平面设计，后来辞职，和几个在网上认识的朋友创业，在798做了一个工作室，制作视频。创业一年多的时间以后，小艾对于自己的职业选择，有了新的考虑，2012年的时候，婚礼市场引起了小艾的注意，他决定回到烟台，这个气候宜人的旅游城市，去做婚礼策划。小艾退出北京的工作室，回到了家乡，也找到了新的合伙人，就在婚礼策划工作室一切就绪的时候，几个人之间的一些矛盾，让这个还没起步的创业计划就这么夭折了。这次失败对小艾有些打击，刚回烟台没多久的他又想到了北京的朋友们，想去北京继续做视频拍摄。可能对于他的摇摆不定，上天想要多给他一些试炼，刚回到北京没多久，家里的一通电话又让小艾不得不放弃准备好的一切，再次回到烟台。</span><span id="_baidu_bookmark_end_9" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span class="author-110341" style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><span id="_baidu_bookmark_end_7" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span></span></p><p style="text-align:center"><span class="author-110341" style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><img src="/static/js/ueditor1_2_4_0/php/upload/img/20160411/14603703435387.jpg" title="3.jpg" style="float:none;" /><br /></span></p><p><span class="author-110341" style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><span style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"> &nbsp; &nbsp; </span><span id="_baidu_bookmark_start_10" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span></span><span id="_baidu_bookmark_start_12" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><span style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"> </span><span id="_baidu_bookmark_start_14" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span></span><span id="_baidu_bookmark_start_16" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">这次回到烟台，小艾重新创业，创办了一个婚礼视频工作室。工作室发展很顺利，两年里，小艾也开始接受在烟台安逸规律的生活，但心里对于这个世界的好奇，也从来没有消失过。他回忆说：”以前觉得拍摄婚礼是一个非常神圣的使命，可以见证新人宣誓的幸福，可是时间久了，每一对新人虽然各有各的美好，但我在已经固定了流程和习俗中开始感到厌烦。&quot;那时候小艾一个非常好的朋友也发现了他对千篇一律的生活的纠结和困惑，用一句有些夸张</span><span id="_baidu_bookmark_start_4" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span id="_baidu_bookmark_start_6" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">却也一针见血的话让小艾重新审视了当时的生活，他说：”小艾，你回烟台就已经死一半了。&quot;</span><span id="_baidu_bookmark_end_17" style="display:none;line-height:0px;">﻿</span><span style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><span id="_baidu_bookmark_end_15" style="display:none;line-height:0px;">﻿</span></span><span id="_baidu_bookmark_end_7" style="display:none;line-height:0px;">﻿</span><span style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><span id="_baidu_bookmark_end_5" style="display:none;line-height:0px;">﻿</span></span></p><p><span class="author-110341" style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><span id="_baidu_bookmark_end_11" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span></span></p><p style="text-align:center"><span class="author-110341" style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><img src="/static/js/ueditor1_2_4_0/php/upload/img/20160411/14603703624116.jpg" title="5.jpg" style="float:none;" /><br /></span></p><p><span class="author-110341" style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><span style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"> &nbsp; &nbsp; </span><span id="_baidu_bookmark_start_14" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span></span><span id="_baidu_bookmark_start_16" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"> 就这样，小艾关掉了婚礼视频工作室，第三次，来到了北京。而且这次他并不是孤身一人，而是和女朋友一起，所以不能再像以前一样住在工作的地方，找房子，成了他们首要的难题。女朋友来北京进修，所以学校附近的地段成了他们居住的首选。小艾想起找房子的经历，告诉我们：”那时候合适的房子挺不好找的，女朋友的同学又经历了黑中介，让我们两个更加慎重，我又没什么租房子的经验，所以挺头疼的。” 后来，有朋友向小艾推荐了自如，也是试一试的心态，小艾和女朋友在自如看了一圈房间，最后选中了现在这个在芍药居的复式合租，木棉风格的房间，小区很方便，市场和超市都很近，最重要的是离女朋友的学校也不远，两个人就这么定了下来。</span><span id="_baidu_bookmark_end_17" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span class="author-110341" style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><span id="_baidu_bookmark_end_15" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span></span></p><p style="text-align:center"><span class="author-110341" style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><img src="/static/js/ueditor1_2_4_0/php/upload/img/20160411/14603703837125.jpg" title="7.jpg" style="float:none;" /><br /></span></p><p><span class="author-110341" style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><span style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"> &nbsp; &nbsp; &nbsp; </span><span id="_baidu_bookmark_start_18" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span></span><span id="_baidu_bookmark_start_20" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">有了安身的地方，小艾就开始专心的做旅行摄影，这一年的时间，他去了西藏、内蒙古等很多地方，在旅途中也经历了不同的挑战，他形容这种生活是刺激的，把很多不可能变成可能。他说：”刚开始看别人的作品觉得一切都很简单，自己尝试了才发现有多艰苦，就比如拍草原天路的时候发现环境影响因素很大，要拍很多次才能出现自己想要的片子，所以后期剪辑的心里会很特别有成就感。比起当时做婚礼摄影的时候永远按套路出牌，这种永远不知道下一秒发生什么的生活，才是我想要的。&quot;</span><span id="_baidu_bookmark_end_21" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span class="author-110341" style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><span id="_baidu_bookmark_end_19" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span></span></p><p style="text-align:center"><span class="author-110341" style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><img src="/static/js/ueditor1_2_4_0/php/upload/img/20160411/14603704223491.jpg" title="6.jpg" style="float:none;" /><br /></span></p><p><span class="author-110341" style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><span style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"> &nbsp; &nbsp; &nbsp;</span><span id="_baidu_bookmark_start_22" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span></span><span id="_baidu_bookmark_start_24" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">工作时常让小艾奔波在路上，但回到北京，女朋友和这个温馨的小家让小艾的内心感到安定。小艾说：&quot;虽然在北京还没有什么稳定根基，但是心里感觉，这个城市才是真正属于他们这代人的。可能快30岁又杀回北京有些不成熟，但是对于自己来说，还是希望实现自己的价值，接触新鲜的事情。更何况现在住的地方很好，女朋友也在身边，满足了我心里对于居住的要求，不用再担心工作疲惫的时候没有归属。&quot;</span><span id="_baidu_bookmark_end_25" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span class="author-110341" style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><span id="_baidu_bookmark_end_23" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span></span></p><p style="text-align:center"><span class="author-110341" style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><img src="/static/js/ueditor1_2_4_0/php/upload/img/20160411/14603703979573.jpg" title="8.jpg" style="float:none;" /><br /></span></p><p><span class="author-110341" style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><span style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"><span id="_baidu_bookmark_start_38" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span></span></span><span id="_baidu_bookmark_start_40" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;"> &nbsp; &nbsp; &nbsp;</span><span id="_baidu_bookmark_start_26" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span id="_baidu_bookmark_start_28" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span id="_baidu_bookmark_start_34" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span id="_baidu_bookmark_start_36" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span style="font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">其实像小艾一样，追求理想和舒适的生活从来都不是件矛盾的事，现在他能专心的在路上拍风景，也能回到家里后和喜欢的人一同享受温馨。他很庆幸自己当时反复的选择让他看清楚了自己想要什么，同时他也很感谢现在安稳的生活让他在追求理想时无所牵绊。</span><span id="_baidu_bookmark_end_41" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span id="_baidu_bookmark_end_39" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span></p><div id="magicdomid531" data-author-name="薛骆驼"><span id="_baidu_bookmark_end_37" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span id="_baidu_bookmark_end_35" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span id="_baidu_bookmark_end_29" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><span id="_baidu_bookmark_end_27" style="display:none;line-height:0px;font-family:微软雅黑, &#39;microsoft yahei&#39;;font-size:16px;">﻿</span><br /></div><p><br /></p></div>
+                </div>
+               </div>
+        	</div>
+        </div>
+</li>
+      
+</ul>
+    <div class="dot_bg"></div>
+    <div class="dot_bg_txt"></div>
+    <!--<p class="dot">
+      <a href="zirommer-gaoliang.html" title="自如客高亮">1</a>
+      <a class="active" href="zirommer-luowei.html" title="自如客罗巍">2</a>
+    </p>-->
+  </div>
+  <div class="catalog clearfix">
+     
+      <a href="/ziroomer/?_a=detail&id=50000123" target="_blank" class="fl">前一篇：自如客桑叶，选对了，租房结婚也幸福</a>
+              <a href="/ziroomer/?_a=detail&id=50000140" target="_blank" class="fr">后一篇：自如客大袁，爱折腾的老朋友</a>
+      </div>
+</div>
+<!--content End-->
+<!--fooder-->
+<div id="footer" style="color:#999; text-align:center; background:#000; padding-bottom:30px;">
+客服电话:400-100-1111 周一至周日9:00-20:00<br />
+Copyright (C) 2011 ziroom.com版权所有 京ICP11024601号-2</div><!--fooder End-->
+<span style="display:none;">
+<script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F038002b56790c097b74c818a80e3a68e' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+<script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-26597311-1']);
+      _gaq.push(['_setLocalRemoteServerMode']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    
+    </script>
+</span>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>有+</title>
+    <style>
+        .contact-list{
+            width:800px;
+            margin:0 auto;
+            padding-top: 30px;
+
+        }
+        .contact-list .top{
+            width:790px;
+            color:#333;
+            background-color:#e7e7e7;
+            border-left:3px solid #ffa011;
+            border-radius:3px;
+
+
+        }
+        .contact-list li p{
+            font-size:14px;
+            color:#959595;
+        }
+        .contact-list li .border-box,
+        .contact-list li h3{
+            display:inline-block;
+        }
+        .contact-list li .border-box{
+            width:3px;
+            height:40px;
+            border-radius:3px;
+            background-color:#ffa011;
+            position:relative;
+            top:2px;
+        }
+        .contact-list li{
+            padding:10px;
+        }
+
+    </style>
+</head>
+<body>
+    {% extends "header.html" %}
+    <div class="container">
+        {% block content%}
+            <div class="content">
+
+                <ul class="contact-list">
+                    <li class="top">
+                        <h3>联系有+</h3>
+                    </li>
+                    <li>
+                        <p>公司地址:北京市昌平区华北电力大学</p>
+                    </li>
+                    <li>
+                        <p>邮编:102206</p>
+                    </li>
+                    <li>
+                        <p>邮箱:wuxn33@126.com</p>
+                    </li>
+                </ul>
+            </div>
+        {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>有+</title>
+    <style>
+    </style>
+    <script>
+        
+    </script>
+</head>
+<body>
+{% extends "header.html" %}
+<div class="container" id="container">
+    {% block content %}
+    <div class="content">
+        <div class="login-container content" id="login-container">
+            <div class="login">
+                <div class="close">
+                <span>X</span>
+                </div>
+                <form method = 'post' enctype="multipart/form-data" class="form-login">
+                    {{ufl.as_ul}}
+                    <button>登录</button>
+                </form>
+                <div class="hr"></div>
+                <p>没有账号？<a href="#" id="to-register">注册</a></p>
+            </div>
+        </div>
+        <div class="register-container login-container" id="register-container">
+            <div class="register login">
+                <div class="close">
+                    <span>X</span>
+                </div>
+                <form method = 'post' enctype="multipart/form-data" class="form-register">
+                    {{uf.as_ul}}
+                    <button>注册</button>
+                </form>
+                <div class="hr"></div>
+                <p>已有账号？<a href="#" id="to-login">登录</a></p>
+            </div>
+        </div>
+        <div class="houseinfo">
+            <div class="div-border items-list">
+                <div class="items">
+                    <span class="item-title">区域：</span>
+                    <span class="elems-l">
+							<span class="selected-item">全部</span>
+							{% for a in areadata %}
+							<a href="/area/{{ a.areaId }}">{{ a.areaProvince }}</a>
+							{% endfor %}
+						</span>
+                </div>
+                <div class="items">
+						<span class="item-title">售价：</span>
+						<span class="elems-l">
+							<span class="selected-item">全部</span>
+							{% for p in pricedata %}
+							<a href="#">{{ p.priceNum }}</a>
+							{% endfor %}
+						</span>
+						<div class="pricecond">
+							<form action="" id="pr_form_apf_id_11" onsubmit="return priceCondition.submit(0);">
+								<input class="from-price" type="text" name="from_price" maxlength="5" id="from_price" autocomplete="off" value>
+								-
+								<input class="to-price" type="text" name="to_price" maxlength="5" id="to_price" autocomplete="off" value>
+								<span class>万</span>
+								<input class="smit" type="submit" id="pricerange_search" value="确定">
+							</form>
+						</div>
+					</div>
+                <div class="items">
+						<span class="item-title">区域：</span>
+						<span class="elems-l">
+							<span class="selected-item">全部</span>
+							{% for s in sqmdata %}
+							<a href="{{ s.sqmUrl }}">{{s.sqmNum}}</a>
+							{% endfor %}
+
+						</span>
+						<div class="areacond">
+							<form method="get" action="" id="pr_form_apf_id_11" onsubmit="return areaCondition.submit(0);">
+								<input class="from-area" type="text" maxlength="5" id="from_area" autocomplete="off" value>
+								-
+								<input class="to-area" type="text" maxlength="5" id="to_area" autocomplete="off" value>
+								<span class>平米</span>
+								<input class="smit" id="arearange_search" type="submit" value="确定">
+							</form>
+						</div>
+                </div>
+            </div>
+            <div class="sale-left">
+
+                <div class="sortby clearfix sortby-top-2">
+                    <!--{{data}}-->
+                    {{currentUrl}}
+
+					<span>为您找到以下<strong>{{ adata.areaProvince}}</strong>二手房</span>
+				</div>
+
+                <ul class="house-list" id="house-list">
+                    {% if currentUrl == adata.areaId %}
+                    {% for t in temp %}
+                     <a href="/housedetail/{{t.houseId}}">
+                         <li class>
+                                <img src="{{STATIC_URL}}images/{{t.imgUrl}}">
+                                <div class="house-detail">
+                                    <div class="house-title">
+                                        <p>{{ t.houseTitle }}</p>
+                                    </div>
+                                    <div class="house-info">
+                                        <p>{{ t.houseTitle }}</p>
+                                    </div>
+
+                                </div>
+                                <div class="price">
+                                    <p>售价:<span>{{ t.housePrice }}万</span></p>
+                                </div>
+                         </li>
+                     </a>
+                    {% endfor %}
+                    {% endif %}
+
+                    {% if currentUrl == undefined %}
+                    {% for hd in data %}
+                     <a href="/housedetail/{{hd.houseId}}">
+                         <li class>
+                                <img src="{{STATIC_URL}}images/{{ hd.imgUrl }}">
+                                <div class="house-detail">
+                                    <div class="house-title">
+                                        <p>{{ hd.houseTitle }}</p>
+                                    </div>
+                                    <div class="house-info">
+                                        <p>{{ hd.houseTitle }}</p>
+                                    </div>
+
+                                </div>
+                                <div class="price">
+                                    <p>售价:<span>{{ hd.housePrice }}万</span></p>
+                                </div>
+                         </li>
+                     </a>
+                    {% endfor %}
+                    <div class="multi-page">
+                         {% if data.has_previous %}
+                         <a href="/?page={{ data.previous_page_number }}" class="aPre">上一页</a>
+                         {% endif %}
+                         {# data.paginator.page_range 这个函数返回包含一个所有页码数的 range 对象 #}
+                         {# 即 range(1, data.paginator.num_pages + 1) #}
+                         {% for page_number in data.paginator.page_range %}
+                            {% ifequal page_number  data.number %}
+                                {{ page_number }}
+                            {% else %}
+                                <a href="/?page={{ page_number }}">{{ page_number }}</a>
+                            {% endifequal %}
+                         {% endfor %}
+                         {# data.paginator.number_pages 返回总页数 #}
+
+                         {% if data.has_next %}
+                         <a href="/?page={{ data.next_page_number }}" class="aNxt">下一页</a>
+                         {% endif %}
+                         <p>Page {{ data.number }} of {{ data.paginator.num_pages }}.</p>
+                    </div>
+                    {% endif %}
+
+					</ul>
+
+
+            </div>
+            <div class="recommend">
+                <span>根据您的浏览,给您推荐以下二手房</span>
+            </div>
+            <div class="history-content" id="history-content">
+                <div class="list" id="list">
+                    <img src="{{STATIC_URL}}/images/5.jpg" alt="1">
+                    <!-- 第五张图的附属图 为了无限循环 无缝隙-->
+                    <img src="{{STATIC_URL}}images/1.jpg" alt="1">
+                    <img src="{{STATIC_URL}}images/2.jpg" alt="2">
+                    <img src="{{STATIC_URL}}images/3.jpg" alt="3">
+                    <img src="{{STATIC_URL}}images/4.jpg" alt="4">
+                    <img src="{{STATIC_URL}}images/5.jpg" alt="5">
+                    <img src="{{STATIC_URL}}images/6.jpg" alt="3">
+                    <img src="{{STATIC_URL}}images/7.jpg" alt="4">
+                    <img src="{{STATIC_URL}}images/8.jpg" alt="5">
+                    <img src="{{STATIC_URL}}images/9.jpg" alt="3">
+                    <img src="{{STATIC_URL}}images/10.jpg" alt="4">
+                    <img src="{{STATIC_URL}}images/11.jpg" alt="5">
+                    <img src="{{STATIC_URL}}images/12.jpg" alt="3">
+                    <img src="{{STATIC_URL}}images/13.jpg" alt="4">
+                    <img src="{{STATIC_URL}}images/14.jpg" alt="5">
+                    <img src="{{STATIC_URL}}images/1.jpg" alt="5">
+                    <!-- 第一张图的附属图 -->
+                </div>
+                <div class="buttons" id="buttons">
+                    <!-- index为自定义属性 -->
+                    <span index="1" class="on"></span>
+                    <span index="2"></span>
+                    <span index="3"></span>
+                    <span index="4"></span>
+                    <span index="5"></span>
+                </div>
+                <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+                <a href="javascript:;" id="next" class="arrow">&gt;</a>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+</div>
+</body>
+</html>
